@@ -69,9 +69,9 @@
 let messages = [
   "Are you sure? 😭",
   "Please Didi 🥺",
-  "I will study hard 😇",
+  "Think again 😭",
   "Last chance 😭",
-  "You are the best sister 💖"
+  "You can't click me 😜"
 ];
 
 let i = 0;
@@ -80,18 +80,21 @@ function noClick() {
   let noBtn = document.querySelector(".no");
   let yesBtn = document.querySelector(".yes");
 
+  // Change text
   noBtn.innerText = messages[i];
   i = (i + 1) % messages.length;
 
+  // Move button randomly
+  let x = Math.random() * (window.innerWidth - 100);
+  let y = Math.random() * (window.innerHeight - 50);
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+
+  // Increase Yes button size
   let size = window.getComputedStyle(yesBtn).fontSize;
   size = parseFloat(size);
   yesBtn.style.fontSize = (size + 10) + "px";
 }
-
-function yesClick() {
-  window.location.href = "yes.html";
-}
 </script>
-
-</body>
-</html>
