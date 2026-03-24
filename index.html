@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Big Request 😅</title>
+
+<style>
+  body {
+    font-family: Arial;
+    text-align: center;
+    background: #f0f8ff;
+    padding-top: 100px;
+  }
+
+  /* Top corner text */
+  .corner-text {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  .box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: inline-block;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .yes {
+    background: lightgreen;
+    border: none;
+  }
+
+  .no {
+    background: lightcoral;
+    border: none;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Corner Text -->
+<div class="corner-text">Mon request for Niku baa 💖</div>
+
+<h1>Dear Didi 😄</h1>
+
+<div class="box">
+  <p>Will you buy me a Royal Enfield Hunter 350? 🏍️🥺</p>
+  <button class="yes" onclick="yesClick()">Yes 💖</button>
+  <button class="no" onclick="noClick()">No 😢</button>
+</div>
+
+<script>
+let messages = [
+  "Are you sure? 😭",
+  "Please Didi 🥺",
+  "I will study hard 😇",
+  "Last chance 😭",
+  "You are the best sister 💖"
+];
+
+let i = 0;
+
+function noClick() {
+  let noBtn = document.querySelector(".no");
+  let yesBtn = document.querySelector(".yes");
+
+  noBtn.innerText = messages[i];
+  i = (i + 1) % messages.length;
+
+  let size = window.getComputedStyle(yesBtn).fontSize;
+  size = parseFloat(size);
+  yesBtn.style.fontSize = (size + 10) + "px";
+}
+
+function yesClick() {
+  window.location.href = "yes.html";
+}
+</script>
+
+</body>
+</html>
